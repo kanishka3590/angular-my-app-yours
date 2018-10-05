@@ -1,0 +1,36 @@
+<router-outlet></router-outlet>
+<div>
+    <p>{{content}}</p>
+    <p>{{showMsg()}}</p>
+
+    <!-- other way to do one way data binding.DOM data inding -->
+    <p [innerText] ='content'></p>    
+
+    <p [innerHTML]='nestedTag'></p>
+    <!-- one way to do one way data binding .DOM to component-->
+    <!-- <input type ='text' #name placeholder="Enter Your Name" (click)='sendData(name)'> -->
+
+    <br>
+    <!-- component to DOM -->
+    <!-- <input type="text" [value] = 'content'> -->
+    <!-- <input type="text" (click)='passData($event)'> -->
+    <h1>{{input}}</h1>
+    <!-- click event  -->
+    <!-- <input type="text" [value] = email (click)='passData($event)'> -->
+    <!--when 'enter' button will press,event call -->
+    <!-- <input type="text" [value] = "email" keyup.enter='passData($event)'> -->
+
+    <!-- two way data binding means when we make changes in component it will change in DOM nd
+     in DOM will component,we have to import FormModule inside app.module.ts -->
+    <input type="text" [(ngModel)] = "email" (keydown.enter)='passData2()'>
+
+</div>
+<app-list></app-list>
+
+
+
+
+
+
+
+
